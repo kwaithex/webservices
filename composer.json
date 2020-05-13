@@ -6,7 +6,11 @@
     "type": "project",
     "require": {
         "php": "^7.2.5",
-        "laravel/lumen-framework": "^7.0"
+        "artisaninweb/laravel-soap": "0.3.0.9",
+        "econea/nusoap": "^0.9.7",
+        "laravel/lumen-framework": "^7.0",
+        "laravelista/lumen-vendor-publish": "^7.0",
+        "viewflex/zoap": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.9.1",
