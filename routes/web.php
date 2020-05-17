@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,14 +16,12 @@ $router->get('/test', function () use ($router) {
 });
 
 $router->get('/', function () use ($router) {
-    $test = file_get_contents("http://localhost/test");
-    var_dump($test);
+    try {
+        DB::connection()->getPdo();
+    } catch (\Exception $e) {
+        die("Could not connect to the database.  Please check your configuration. error:" . $e );
+    }
 });
-
-app()->router->get('zoap/{key}/server', [
-    'as' => 'zoap.server.wsdl',
-    'uses' => '\Viewflex\Zoap\ZoapController@server'
-]);
 
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('countries/{item_count}', ['uses' => 'RESTController@showCountryAndCities']);

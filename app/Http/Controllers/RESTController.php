@@ -9,6 +9,7 @@ class RESTController extends Controller
 
     public function showCountryAndCities($item_count)
     {
+        // return response()->json(Country::all()->random($item_count)->load('cities'));
         return response()->json(Country::all()->random($item_count)->load('cities'));
     }
 

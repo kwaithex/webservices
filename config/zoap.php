@@ -5,24 +5,37 @@ return [
     // Service configurations.
 
     'services'          => [
-        
-        'demo'              => [
-            'name'              => 'Demo',
-            'class'             => 'Viewflex\Zoap\Demo\DemoService',
+        'helloworld'            => [
+            'name'              => 'Hello World',
+            'class'             => 'App\SOAP\Helloworld\HelloWorldService',
             'exceptions'        => [
                 'Exception'
             ],
             'types'             => [
-                'keyValue'          => 'Viewflex\Zoap\Demo\Types\KeyValue',
-                'product'           => 'Viewflex\Zoap\Demo\Types\Product'
+                'helloworld'           => 'App\SOAP\Types\HelloWorld'
             ],
-            'strategy'          => 'ArrayOfTypeComplex',
+            'strategy'          => 'AnyType',
+            'headers'           => [
+                'Cache-Control'     => 'no-cache, no-store'
+            ],
+            'options'           => []
+        ],
+        'countries'            => [
+            'name'              => 'Countries and cities',
+            'class'             => 'App\SOAP\Country\CountryService',
+            'exceptions'        => [
+                'Exception'
+            ],
+            'types'             => [
+                'country'           => 'App\SOAP\Types\Country',
+                'city'              => 'App\Soap\Types\City'
+            ],
+            'strategy'          => 'AnyType',
             'headers'           => [
                 'Cache-Control'     => 'no-cache, no-store'
             ],
             'options'           => []
         ]
-        
     ],
 
     

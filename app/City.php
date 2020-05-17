@@ -12,9 +12,7 @@ class City extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'state_id'
-    ];
+    protected $fillable = ['name'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -22,4 +20,11 @@ class City extends Model
      * @var array
      */
     protected $hidden = [];
+
+    /**
+     * The attributes excluded from the model's JSON form.
+     *
+     * @var array
+     */
+    protected $attributes = ['name'];
 }
