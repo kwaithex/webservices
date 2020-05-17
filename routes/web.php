@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
-$router->get('/test', function () use ($router) {
-    echo "LOL";
-});
-
 $router->get('/', function () use ($router) {
     try {
         DB::connection()->getPdo();
